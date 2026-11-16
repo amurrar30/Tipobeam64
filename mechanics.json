@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "values": [
+    {
+      "name": "target.sha256",
+      "value": "a04faa9b4c01da6da991eb4b8a2e3a0887a0e542ceac2ca93b692676ce3e18b8",
+      "source": "core_target_triage target t_a04faa9b4c01 (C:\\Program Files\\Doka\\TipBeam\\Program\\_Neutral\\TipbeamX64.exe)"
+    },
+    {
+      "name": "target.kind",
+      "value": "mixed-mode .NET/MFC x64 PE, .NETFramework v4.7.2",
+      "source": "managed_assembly_show/core_target_triage target t_a04faa9b4c01"
+    },
+    {
+      "name": "calc.gamma_f.evidenced_text_value",
+      "value": 1.5,
+      "source": "D_TXT_GAMMA_1_5_FACH @ 0x140103ccc (ev_ecdcebd5f7da3fc1b0373456c68a572f229d7262efef7c4d82bb4943a2e8238b); getter get_GammaF @ 0x140102aba name observed, numeric return not recovered"
+    },
+    {
+      "name": "calc.gamma_f.default_used_in_rebuild",
+      "value": 1.5,
+      "source": "Aligned to evidenced text D_TXT_GAMMA_1_5_FACH @ 0x140103ccc; getter default not recovered"
+    },
+    {
+      "name": "calc.gamma_m_timber.default_used_in_rebuild",
+      "value": 1.3,
+      "estimated": true,
+      "source": "Placeholder; get_GammaMTimber @ 0x140102ccb getter name observed, value not recovered"
+    },
+    {
+      "name": "calc.gamma_m_steel.default_used_in_rebuild",
+      "value": 1.1,
+      "estimated": true,
+      "source": "Placeholder; get_GammaMSteel @ 0x140102cdc getter name observed, value not recovered"
+    },
+    {
+      "name": "calc.kmod_timber.default_used_in_rebuild",
+      "value": 0.9,
+      "estimated": true,
+      "source": "Placeholder; get_KModTimber @ 0x140102cbc getter name observed, value not recovered"
+    },
+    {
+      "name": "eurocode.mode.flag_name",
+      "value": "bStaticEurocode/get_StaticEurocode",
+      "source": "bStaticEurocode @ 0x1400d3119 (ev_4497d0ea...), get_StaticEurocode @ 0x140102787 (ev_3799830e...), D_TXT_RECHNUNG_NACH_EUROCODE @ 0x140103994 (ev_32a4a03a...)"
+    },
+    {
+      "name": "utilization.calc_code_field",
+      "value": "iAuslastungsCalcCode via CDbeam.Get/SetStabAuslastungsCalcCode",
+      "source": "iAuslastungsCalcCode @ 0x1400d0601, GetStabAuslastungsCalcCode @ 0x1400d076a, SetStabAuslastungsCalcCode @ 0x1400d08fd (ev_a1e253eb...)"
+    },
+    {
+      "name": "utilization.subcases_observed",
+      "value": [
+        "CDbeam.CalcAuslastung",
+        "CDbeam.CalcAuslastungSub1to6",
+        "CDbeam.CalcAuslastungSub7",
+        "CDbeam.CalcAuslastungSub8",
+        "CDbeam.CalcAuslastungSub9",
+        "CDbeam.CalcAuslastungSubDefault",
+        "CDbeam.CalcAuslastungSub100andMore"
+      ],
+      "source": "String/symbol evidence ev_a5f3f89f... @ 0x1400d1345,0x1400d1383,0x1400d13ba,0x1400d13d4,0x1400d13ee,0x1400d1408,0x1400d1428; formulas not recovered"
+    },
+    {
+      "name": "overload.concept_evidenced",
+      "value": "D_TXT_UEBERLASTUNG / OnWriteBelastungUeberlastungSub",
+      "source": "D_TXT_UEBERLASTUNG @ 0x14010422a, CTipBeamView.OnWriteBelastungUeberlastungSub @ 0x1400d9126 (ev_fe9a97b6...)"
+    },
+    {
+      "name": "overload.threshold_used_in_rebuild",
+      "value": 1.0,
+      "estimated": true,
+      "source": "Aligned to utilization>1.0 as explicit approximation; original numeric criterion not recovered (MECHANICS.md)"
+    },
+    {
+      "name": "pipeline.calculate_entry",
+      "value": "CTipBeamDoc.CalculateDirect",
+      "source": "ev_edcf35a4... @ 0x1400d6c33"
+    },
+    {
+      "name": "pipeline.last_check",
+      "value": "CDbeam.LastPruefung",
+      "source": "ev_b0a4d66c... @ 0x1400d1526"
+    },
+    {
+      "name": "output.print_members_observed",
+      "value": [
+        "CTipBeamView.dm_print",
+        "CTipBeamView.PrintHeader",
+        "CDbmDruckDlg",
+        "CTipBeamDoc.AppendPrintTabs",
+        "CTipBeamDoc.MakePrintZusammenfassung",
+        "CTipBeamDoc.AppendErgebnisliste",
+        "CTipBeamDoc.AppendErgebnislisteLegende"
+      ],
+      "source": "ev_ed12b065..., ev_0c7b6af0..., ev_808b772a..., ev_4cfd7802..., ev_3994176b..., ev_9e517554... (see app/MECHANICS.md)"
+    },
+    {
+      "name": "loads.concrete_pressure_observed",
+      "value": "CDbeam.SetBetondruck/SetAllSelLoadsToBetondruck, D_TXT_BETONDRUCK, OnBbBetondruck",
+      "source": "ev_f40722dd... @ 0x1400d122d,0x1400d12e7,0x140103e78,0x1400d9c0f"
+    },
+    {
+      "name": "solver.model_used_in_rebuild",
+      "value": "Plane Euler-Bernoulli FEM (vertical translation + rotation DOFs, hinges split rotations), linear elastic",
+      "estimated": true,
+      "source": "Engineering reconstruction; original internal solver formulas not decompiled (see MECHANICS.md limitations)"
+    },
+    {
+      "name": "calculation_formulas.original",
+      "value": "unrecovered",
+      "estimated": true,
+      "source": "unk_c9fe131644a7d5a3: CalcAuslastung*/LastPruefung/CalculateDirect bodies not decompiled; getter defaults not recovered"
+    },
+    {
+      "name": "print_report_layout.original",
+      "value": "unrecovered",
+      "estimated": true,
+      "source": "unk_b2e185c6657cb800: dm_print/PrintHeader/CDbmDruckDlg formatting rules not recovered"
+    },
+    {
+      "name": "file_formats.bi2_bi5_bi7.original",
+      "value": "unrecovered",
+      "estimated": true,
+      "source": "unk_990dd693a249e8e2: exact BI2/BI5/BI7 structures not recovered from static evidence in this run"
+    }
+  ]
+}
